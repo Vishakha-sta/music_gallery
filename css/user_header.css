@@ -159,10 +159,12 @@ label #sidebar_btn:hover{
 
 .content{
     margin-left: 250px;
-    background: url('../image/music-2.jpg');
+    background-image: radial-gradient(rgb(241, 132, 255),rgb(255, 57, 255));
+    /* background: url('../image/music-2.jpg'); */
     background-position: center;
     background-size: cover;
-    height: 100vh;
+    /* height: 100vh; */
+    height: auto;
     padding-top: 70px;
     transition: 0.5s;
 }

@@ -44,7 +44,11 @@
             <a href="#"><i class="fas fa-address-book"></i><span>contact us</span></a>
             <a href="#"><i class="fas fa-sign-out-alt"></i><span>logout</span></a>
         </div>
+
         <div class="content">
+            <?php
+                include 'user_dashboard.php';
+            ?>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
                 Quae tenetur porro enim recusandae repellat voluptas 
                 voluptatem. Ipsam amet ea pariatur perferendis, 

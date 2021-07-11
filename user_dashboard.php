@@ -9,7 +9,9 @@
         <link rel="stylesheet" href="css/content_box.css">
     </head>
     <body>
-        <?php include 'user_header.html'; ?>
+        <?php 
+            include 'user_header.php'; 
+        ?>
         <div class="content-box">
             <!-- <h1>Hello this is main page</h1> -->
         </div>    

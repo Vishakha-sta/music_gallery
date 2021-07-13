@@ -72,7 +72,7 @@ header .head .username span {
     left: 0;
     width: 250px;
     /* height:620px; */
-    height: 530px;
+    height: 575px;
     transition: 0.5s;
     transition-property: left;
     /* scroll-snap-type: mandatory;*/
@@ -159,7 +159,8 @@ label #sidebar_btn:hover{
 
 .content{
     margin-left: 250px;
-    background-image: radial-gradient(rgb(241, 132, 255),rgb(255, 57, 255));
+    font-family:monotype corsiva,Arial, Helvetica, sans-serif !important;
+    /* background-image: radial-gradient(rgb(241, 132, 255),rgb(255, 57, 255)); */
     /* background: url('../image/music-2.jpg'); */
     background-position: center;
     background-size: cover;

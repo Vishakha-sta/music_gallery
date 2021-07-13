@@ -1,0 +1,46 @@
+
+
+        audio::-webkit-media-controls-panel, video::-webkit-media-controls-panel {
+                background-color: rgb(238, 88, 243);
+                color: white;
+        }
+        audio::-webkit-media-controls-enclosure {
+        border-radius: 10px;
+        width: 200px;
+        margin: 0;
+        }
+        audio::-webkit-media-controls-timeline-container, video::-webkit-media-controls-timeline-container {
+    -webkit-appearance: media-controls-background;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1 1;
+    -webkit-user-select: none;
+    height: 16px;
+    width: 200px;
+}
+audio::-webkit-media-controls-current-time-display, video::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display, video::-webkit-media-controls-time-remaining-display {
+    -webkit-appearance: media-current-time-display;
+    -webkit-user-select: none;
+    flex: none;
+    display: none;
+    border: none;
+    cursor: default;
+    height: 30px;
+    margin: 0 9px 0 0;
+    padding: 0;
+    line-height: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    font-style: normal;
+    color: white;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0;
+    text-shadow: none;
+    text-decoration: none;
+}

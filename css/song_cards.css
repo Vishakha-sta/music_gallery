@@ -19,7 +19,7 @@
   }
   
   .music-card {
-    margin: 100px auto;
+    margin: 100px 20px;
     border-radius: 6px;
     background: #fff;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
@@ -96,3 +96,200 @@
       justify-content: space-around;
   }
   
+  /* Responsiveness */
+  @media screen and (max-width: 850px){
+    .music-card {
+      margin: 100px auto;
+      border-radius: 6px;
+      background: #fff;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+      overflow: hidden;
+      position: relative;
+      width: 180px;
+      height: 290px;
+    }
+    .music-card .image img {
+      position: absolute;
+      z-index: 1;
+      opacity: 0.3;
+      height: 180px;
+      width: 180px;
+    }
+    .music-card .image:after {
+      height: 18px;
+      content: "";
+      top: 180px;
+      position: absolute;
+      width: 100%;
+      z-index: 1;
+      background: linear-gradient(rgba(221, 65, 127, 0), #DD417F);
+    }
+    .music-card .wave {
+      position: absolute;
+      height: 480px;
+      width: 400px;
+      opacity: 0.6;
+      left: 0;
+      top: 0;
+      margin-left: -60%;
+      margin-top: -120%;
+      border-radius: 40%;
+      background: radial-gradient(#B01DE8, #F34235);
+      -webkit-animation: spin 3000ms infinite linear;
+              animation: spin 3000ms infinite linear;
+    }
+    .music-card .wave:nth-child(2) {
+      top: 10px;
+      -webkit-animation: spin 4000ms infinite linear;
+              animation: spin 4000ms infinite linear;
+    }
+    .music-card .wave:nth-child(3) {
+      top: 10px;
+      -webkit-animation: spin 5000ms infinite linear;
+              animation: spin 5000ms infinite linear;
+    }
+    .music-card .info {
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      right: 0;
+      text-align: center;
+    }
+    .music-card .info .title {
+      font-size: 1.05em;
+      font-weight: 500;
+      font-family: "Playfair display";
+      color: rgb(247, 220, 238);
+      margin-bottom: 8px;
+    }
+    .music-card .info .artist {
+      font-family: "Source sans pro";
+      color: #460096;
+      font-size: 0.8em;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .box_it{
+        display: flex;
+        flex-direction: row;
+        align-items: left;
+        justify-content: space-around;
+    }
+
+  }
+  /* Responsiveness */
+   @media screen and (max-width: 600px){
+    .music-card {
+      margin: 20px auto;
+      border-radius: 6px;
+      background: #fff;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+      overflow: hidden;
+      position: relative;
+      width: 240px;
+      height: 390px;
+    }
+    .music-card .image img {
+      position: absolute;
+      z-index: 1;
+      opacity: 0.3;
+      height: 240px;
+      width: 240px;
+    }
+    .music-card .image:after {
+      height: 60px;
+      content: "";
+      top: 180px;
+      position: absolute;
+      width: 100%;
+      z-index: 1;
+      background: linear-gradient(rgba(221, 65, 127, 0), #DD417F);
+    }
+    .music-card .wave {
+      position: absolute;
+      height: 580px;
+      width: 600px;
+      opacity: 0.6;
+      left: 0;
+      top: 0;
+      margin-left: -70%;
+      margin-top: -130%;
+      border-radius: 40%;
+      background: radial-gradient(#B01DE8, #F34235);
+      -webkit-animation: spin 3000ms infinite linear;
+              animation: spin 3000ms infinite linear;
+    }
+    .music-card .wave:nth-child(2) {
+      top: 10px;
+      -webkit-animation: spin 4000ms infinite linear;
+              animation: spin 4000ms infinite linear;
+    }
+    .music-card .wave:nth-child(3) {
+      top: 10px;
+      -webkit-animation: spin 5000ms infinite linear;
+              animation: spin 5000ms infinite linear;
+    }
+    .music-card .info {
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      right: 0;
+      text-align: center;
+    }
+    .music-card .info .title {
+      font-size: 1.3em;
+      font-weight: 500;
+      font-family: "Playfair display";
+      color: rgb(202, 10, 138);
+      margin-bottom: 8px;
+    }
+    .music-card .info .artist {
+      font-family: "Source sans pro";
+      color: #460096;
+      font-size: 0.8em;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    /* audio, canvas, progress, video {
+      display: inline-block;
+      width: -webkit-fill-available !important;
+     
+  } */
+  audio {
+    /*border-radius: 90px;*/
+    width: 250px;
+    height: 45px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    }
+    
+    audio::-webkit-media-controls-mute-button {
+    display: none !important;
+    }
+    
+    audio::-webkit-media-controls-volume-slider {
+    display: none !important;
+    }
+    
+    audio::-webkit-media-controls-volume-control-container.closed {
+    display: none !important;
+    }
+    audio::-webkit-media-controls-volume-control-container{
+    display: none !important;
+    }
+  /* audio::-webkit-media-controls-panel, video::-webkit-media-controls-panel {
+    background-color: rgb(197, 32, 161);
+  } */
+  /* audio {
+    filter: sepia(20%) saturate(70%) grayscale(0.1) contrast(99%) invert(12%);
+    width: 200px;
+    height: 25px;
+} */
+    .box_it{
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        justify-content: space-around;
+    }
+
+  } 

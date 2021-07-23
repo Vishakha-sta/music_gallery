@@ -1,22 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/user_dashboard.css">
+<?php include 'user_header.php'; ?>
+
+<link rel="stylesheet" href="css/user_dashboard.css">
     <title>Dashboard</title>
-</head>
-<body>
+    
+    <body>
+        <?php include 'music_player.php'; ?>
     <div class="dashboard">    
         <div class="songs dash-display">
-            <div class="heading">
+            <!-- <div class="heading">
                 <h2><i class="fas fa-guitar"></i> Songs</h2>
-            </div>
+            </div> -->
             <div class="song_card ">
                 <?php
-                    include 'song_cards.php';
-                ?>
+                    include 'songs.php';
+                    ?>
             </div>
         </div>
         <div class="album dash-display">
@@ -26,7 +23,7 @@
             <div class="song_card">
                 <?php
                     include 'song_cards.php';
-                ?>
+                    ?>
             </div>
         </div>
         <div class="artist dash-display">
@@ -36,7 +33,7 @@
             <div class="song_card">
                 <?php
                     include 'song_cards.php';
-                ?>
+                    ?>
             </div>
         </div>
         <div class="playlist dash-display">
@@ -46,10 +43,11 @@
             <div class="song_card">
                 <?php
                     include 'song_cards.php';
-                ?>
+                    ?>
             </div>
-
+            
         </div>
     </div>
 </body>
 </html>
+<?php include 'footer.php'; ?>

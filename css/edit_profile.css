@@ -1,0 +1,73 @@
+body {
+    background-color: rgb(248, 179, 250);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.form .form-field {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: left;
+    margin: 2%;
+    width: 60%;
+    font-size: 20px;
+    font-weight: bolder;
+    color: rgb(39, 0, 49);
+}
+
+input {
+    margin-top: 1%;
+    padding: 1%;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(192, 74, 228);
+    color: rgb(206, 206, 206);
+    box-shadow: 5px 5px 19px rgb(67, 8, 78);
+}
+
+input:focus {
+    outline: none;
+    border: 5px groove rgba(152, 0, 199, 0.781);
+}
+
+.form .form-field .btn {
+    height: 40px;
+    background-image: linear-gradient(45deg, rgb(207, 0, 114), rgba(45, 0, 66, 0.692));
+}
+
+.form .form-field .btn:hover {
+    height: 40px;
+    background-image: linear-gradient(45deg, rgb(151, 25, 73), rgb(165, 0, 96));
+    cursor: pointer;
+    color: white;
+    box-shadow: 5px 5px 4px rgb(2, 66, 66);
+}
+
+.form .form-field button .btn {
+    height: 40px;
+    background-image: linear-gradient(45deg, rgb(207, 0, 114), rgba(45, 0, 66, 0.692));
+    margin-top: 1%;
+    padding: 1%;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(192, 74, 228);
+    color: rgb(206, 206, 206);
+    box-shadow: 5px 5px 19px rgb(67, 8, 78);
+}
+
+.form .form-field button .btn:hover {
+    height: 40px;
+    background-image: linear-gradient(45deg, rgb(151, 25, 73), rgb(165, 0, 96));
+    cursor: pointer;
+    color: white;
+    box-shadow: 5px 5px 4px rgb(2, 66, 66);
+}

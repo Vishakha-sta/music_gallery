@@ -1,0 +1,64 @@
+        /* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+        
+        .cards {
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            /* align-items: center; */
+            /* min-height: 100vh; */
+            /* background-image: linear-gradient(45deg, rgb(245, 62, 93), rgba(204, 0, 119, 0.795)); */
+        }
+        /* @media screen and (max-width: 800px) {
+            .cards {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-evenly;
+            }
+            .music_card {
+                margin: 2%;
+            }
+        } */
+        
+        .music_card {
+            /* position: relative; */
+            width: 250px;
+            margin: 2%;
+            background: #f1f3f4;
+            box-shadow: 5px 8px 17px black;
+            /* box-shadow: 0 50px 80px black; */
+        }
+        
+        .music_card .imgBox {
+            /* position: relative; */
+            width: 100%;
+            height: 350px;
+        }
+        
+        .music_card .imgBox img {
+            /* position: absolute; */
+            top: 0;
+            left: 0;
+            width: 350px;
+            height: 300px;
+            object-fit: cover;
+        }
+        
+        .music_card audio {
+            width: 100%;
+            outline: none;
+        }
+        
+        .heading {
+            font-family: monotype corsiva, Arial, Helvetica, sans-serif !important;
+            text-align: center;
+            font-size: 40px;
+            margin-top: 2%;
+            background: linear-gradient(to right, #f32170, #ff6b08, #cf23cf, #eedd44);
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+        }

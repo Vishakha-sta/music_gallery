@@ -20,7 +20,7 @@
 
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Playfair+Display|Source+Sans+Pro'>
   <link rel="stylesheet" href="css/song_cards.css">
-  <link rel="stylesheet" href="music_check.css">
+  <!-- <link rel="stylesheet" href="css/music_check.css"> -->
 
 </head>
 
@@ -36,11 +36,11 @@
     <div class='info'>
         <h2 class='title'>Blue Neighborhood</h2>
         <author class='artist'>Troye Sivan</author>
-        <audio controls>
+        <!-- <audio controls>
           <source src="music/water.mp3" type="audio/ogg">
           <source src="music/water.mp3" type="audio/mpeg">
           Your browser does not support the audio element.
-        </audio>
+        </audio> -->
     </div>
 </div>
   <div class='music-card'>

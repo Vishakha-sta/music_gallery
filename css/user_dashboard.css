@@ -1,4 +1,4 @@
-.dashboard{
+.dashboard {
     display: flex;
     flex-direction: column;
     align-items: left;
@@ -7,14 +7,16 @@
     margin: 0%;
     padding: 0%;
 }
-.dashboard .dash-display{
+
+.dashboard .dash-display {
     /* display: flex; */
     flex-direction: column;
     /* align-items: center; */
     /* justify-content: space-around; */
 }
-.dashboard .dash-display .heading{
-    font-family:monotype corsiva,Arial, Helvetica, sans-serif !important;
+
+.dashboard .dash-display .heading {
+    font-family: monotype corsiva, Arial, Helvetica, sans-serif !important;
     text-align: center;
     font-size: 40px;
     margin-top: 2%;
@@ -22,7 +24,9 @@
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
 }
-.dashboard .dash-display .song_card{
-    /* margin: 1%;
-    padding:1% */
-}
+
+
+/* .dashboard .dash-display .song_card {
+    margin: 1%;
+    padding: 1%
+} */

@@ -33,7 +33,7 @@ body {
 
 .music-card .image img {
     position: absolute;
-    z-index: 1;
+    z-index: -1;
     opacity: 0.3;
     height: 240px;
     width: 240px;
@@ -303,4 +303,14 @@ body {
         align-items: left;
         justify-content: space-around;
     }
+}
+
+.heading h2 {
+    font-family: monotype corsiva, Arial, Helvetica, sans-serif !important;
+    text-align: center;
+    font-size: 40px;
+    margin-top: 2%;
+    background: linear-gradient(to right, #f32170, #ff6b08, #cf23cf, #eedd44);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
 }

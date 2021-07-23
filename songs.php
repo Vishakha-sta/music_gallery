@@ -1,4 +1,4 @@
-<!-- <?php include 'user_header.php'; ?> -->
+<?php include 'user_header.php'; ?>
 
     <title>Songs</title>
     <link rel="stylesheet" href="css/songs.css">
@@ -37,4 +37,4 @@
         
     </div>
 </body>
-<!-- <?php include 'footer.php'; ?> -->
+<?php include 'footer.php'; ?>

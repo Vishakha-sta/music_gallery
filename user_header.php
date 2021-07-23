@@ -34,10 +34,10 @@
             </div>
             <a href="search.php"><i class="fas fa-search"></i><span>search</span></a>
             <a href="user_dashboard.php"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
-            <a href="playlist.php"><i class="fas fa-headphones"></i><span>playlist</span></a>
+            <a href="songs.php"><i class="fas fa-record-vinyl"></i><span>songs</span></a>
             <a href="album.php"><i class="fas fa-compact-disc"></i><span>album</span></a>
             <a href="artist.php"><i class="fas fa-music"></i><span>artist</span></a>
-            <a href="songs.php"><i class="fas fa-record-vinyl"></i><span>songs</span></a>
+            <a href="playlist.php"><i class="fas fa-headphones"></i><span>playlist</span></a>
             <a href="edit_profile.php"><i class="fas fa-user-edit"></i><span>profile</span></a>
             <a href="#"><i class="fas fa-layer-group"></i><span>about us</span></a>
             <a href="#"><i class="fas fa-address-book"></i><span>contact us</span></a>

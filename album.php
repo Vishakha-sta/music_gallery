@@ -1,4 +1,4 @@
-
+<?php include 'user_header.php'; ?>
 
   <title>Album</title>
   <link href='https://fonts.googleapis.com/css?family=Playfair+Display|Source+Sans+Pro' rel='stylesheet' type='text/css'>
@@ -56,7 +56,7 @@
         </a> 
     </div>
 </body>
-
+<?php include 'footer.php'; ?>
 
 
 

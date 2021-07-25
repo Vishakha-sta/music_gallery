@@ -6,35 +6,28 @@
 <body>
 
     <div class="heading">
-                <h2><i class="fas fa-guitar"></i> Songs</h2>
+        <h2><i class="fas fa-guitar"></i> Songs</h2>
     </div>
+
     <div class="cards">
         
-        <div class="music_card">
-            <div class="imgBx">
-                <img src="image/music-1.jpg" style="width: 250px" alt="">
-            </div>
-            <audio controls>
-            <source src="music/water.mp3" type="audio/mp3">
-        </audio>
-        </div>
-        <div class="music_card">
-            <div class="imgBx">
-                <img src="image/music-1.jpg" style="width: 250px" alt="">
-            </div>
-            <audio controls>
-            <source src="music/water.mp3" type="audio/mp3">
-        </audio>
-        </div>
-        <div class="music_card">
-            <div class="imgBx">
-                <img src="image/music-1.jpg" style="width: 250px" alt="">
-            </div>
-            <audio controls>
-            <source src="music/water.mp3" type="audio/mp3">
-        </audio>
-        </div>
-        
+        <?php  
+            $sql = "SELECT * FROM songs ORDER BY RAND() ";
+            $result = mysqli_query($con , $sql);
+            if($result -> num_rows  > 0 ){
+                while($row = $result->fetch_assoc()){                
+                    ?>
+                    <div class="music_card">
+                        <div class="imgBx">
+                            <img src="<?php echo $row['songimg']; ?>" style="width: 250px" alt="">
+                        </div>
+                        <audio controls>
+                            <source src="<?php echo $row['songpath']; ?>" type="audio/mp3">
+                        </audio>
+                    </div>
+                <?php }
+            } ?>
+                
     </div>
 </body>
 <?php include 'footer.php'; ?>

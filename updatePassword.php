@@ -1,5 +1,5 @@
 <?php
-include("db.php");
+include("includes/db.php");
 
 if(!isset($_POST['username'])) {
 	echo "ERROR: Could not set username";

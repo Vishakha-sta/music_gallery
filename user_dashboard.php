@@ -19,16 +19,25 @@
             <div class="song_card ">
                 <link rel="stylesheet" href="css/songs.css">
                 <div class="cards">
-                    <?php for($i =1 ; $i<=3 ; $i++){ ?>
+                    <?php 
+                        
+                    $sql = "SELECT * FROM songs ORDER BY RAND() LIMIT 3";
+                    $result = mysqli_query($con , $sql);
+                    if($result -> num_rows  > 0 ){
+                    while($row = $result->fetch_assoc()){
+
+                    
+                     ?>
                         <div class="music_card">
                             <div class="imgBx">
-                                <img src="image/music-1.jpg" style="width: 250px" alt="">
+                                <img src="<?php echo $row['songimg']; ?>" style="width: 250px" alt="">
                             </div>
                             <audio controls>
-                                <source src="music/water.mp3" type="audio/mp3">
+                                <source src="<?php echo $row['songpath']; ?>" type="audio/mp3">
                             </audio>
                         </div>
-                    <?php } ?>
+                    <?php }
+                } ?>
                 </div>
             </div>
         </div>
@@ -39,23 +48,31 @@
                 <h2><i class="fas fa-drum"></i> Albums</h2>
             </div>
             <div class="song_card">
+
                 <div class="box_it">
-                    <?php for($i =1 ; $i<=3 ; $i++){ ?>
+                    
+                    <?php 
+                    $sql = "SELECT * FROM albums ORDER BY RAND() LIMIT 3";
+                    $result = mysqli_query($con , $sql);
+                    if($result -> num_rows  > 0 ){
+                    while($row = $result->fetch_assoc()){
+                     ?>
                         <a href="album_songs.php?albumid=1">    
                             <div class='music-card'>
                                 <div class='image'>
-                                    <img src='image/profile-2.jpg'>
+                                    <img src='<?php echo $row['album_img']; ?>'>
                                 </div>
                                 <div class='wave'></div>
                                 <div class='wave'></div>
                                 <div class='wave'></div>
                                 <div class='info'>
-                                    <h2 class='title'>Blue Neighborhood</h2>
-                                    <author class='artist'>Troye Sivan</author>
+                                    <h2 class='title'><?php echo $row['albumname']; ?></h2>
+                                    
                                 </div>
                             </div>
                         </a> 
-                    <?php } ?>
+                    <?php } } ?>
+
                 </div>
 
             </div>
@@ -105,21 +122,3 @@
 </body>
 </html>
 <?php include 'footer.php'; ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

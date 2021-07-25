@@ -1,3 +1,12 @@
+<?php include 'includes/db.php'; ?>
+<?php
+
+$sql = "SELECT * FROM `users` WHERE `username` = 'vishakha'";
+$result = mysqli_query($con , $sql);
+if($result -> num_rows == 1 ){
+    while($row = $result->fetch_assoc()){
+
+    ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -20,7 +29,7 @@
                     </label>
                 </div>
                 <div class="username">
-                    <span>Welcome -<p> Vishakha</p></span>
+                    <span>Welcome -<p> <?php echo $row['fname']; ?></p></span>
                 </div>
             </div>
         </header>
@@ -28,8 +37,8 @@
         <div class="sidebar">
             <div class="pro">
             <center>
-                <img src="image/profile-5-1.jpg" class="profile_image" alt="profile">
-                <h4>Vishakha </h4>
+                <img src="<?php echo $row['photo']; ?>" class="profile_image" alt="profile">
+                <h4><?php echo $row['fname']; ?> </h4>
             </center>
             </div>
             <a href="search.php"><i class="fas fa-search"></i><span>search</span></a>
@@ -38,7 +47,8 @@
             <a href="album.php"><i class="fas fa-compact-disc"></i><span>album</span></a>
             <a href="artist.php"><i class="fas fa-music"></i><span>artist</span></a>
             <a href="playlist.php"><i class="fas fa-headphones"></i><span>playlist</span></a>
-            <a href="edit_profile.php"><i class="fas fa-user-edit"></i><span>profile</span></a>
+            <a href="edit_profile.php?userid=<?php echo $row['userid'];?>"><i class="fas fa-user-edit"></i><span>profile</span></a>
+            <!-- <?php echo $row['userid'];?> -->
             <a href="#"><i class="fas fa-layer-group"></i><span>about us</span></a>
             <a href="#"><i class="fas fa-address-book"></i><span>contact us</span></a>
             <a href="#"><i class="fas fa-sign-out-alt"></i><span>logout</span></a>
@@ -46,6 +56,12 @@
 
         <div class="content">
             <?php
+
+                    }//while loop
+                }//if condition
+                else{
+                    echo "Check your username!!";
+                }
                 /*include 'user_dashboard.php';*/
             ?>
             <!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 

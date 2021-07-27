@@ -1,7 +1,15 @@
 <?php include 'includes/db.php'; ?>
 <?php
 
-$sql = "SELECT * FROM `users` WHERE `username` = 'vishakha'";
+session_start();
+if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
+	header("location: index.php");
+ 	//echo"vishakha<br>";
+	exit;
+}
+$username= $_SESSION["username"];
+$sql = "SELECT * FROM `users` WHERE `username` = '$username'";
+// $sql = "SELECT * FROM `users` WHERE `username` = 'vishakha'";
 $result = mysqli_query($con , $sql);
 if($result -> num_rows == 1 ){
     while($row = $result->fetch_assoc()){
@@ -30,6 +38,7 @@ if($result -> num_rows == 1 ){
                 </div>
                 <div class="username">
                     <span>Welcome -<p> <?php echo $row['fname']; ?></p></span>
+                    <!-- <span>Welcome -<p> <?php echo $_SESSION['fname']; ?></p></span> -->
                 </div>
             </div>
         </header>
@@ -38,7 +47,9 @@ if($result -> num_rows == 1 ){
             <div class="pro">
             <center>
                 <img src="<?php echo $row['photo']; ?>" class="profile_image" alt="profile">
+                <!-- <img src="<?php echo $_SESSION['photo']; ?>" class="profile_image" alt="profile"> -->
                 <h4><?php echo $row['fname']; ?> </h4>
+                <!-- <h4><?php echo $_SESSION['fname']; ?> </h4> -->
             </center>
             </div>
             <a href="search.php"><i class="fas fa-search"></i><span>search</span></a>
@@ -47,11 +58,12 @@ if($result -> num_rows == 1 ){
             <a href="album.php"><i class="fas fa-compact-disc"></i><span>album</span></a>
             <a href="artist.php"><i class="fas fa-music"></i><span>artist</span></a>
             <a href="playlist.php"><i class="fas fa-headphones"></i><span>playlist</span></a>
-            <a href="edit_profile.php?userid=<?php echo $row['userid'];?>"><i class="fas fa-user-edit"></i><span>profile</span></a>
-            <!-- <?php echo $row['userid'];?> -->
-            <a href="#"><i class="fas fa-layer-group"></i><span>about us</span></a>
-            <a href="#"><i class="fas fa-address-book"></i><span>contact us</span></a>
-            <a href="#"><i class="fas fa-sign-out-alt"></i><span>logout</span></a>
+            <!-- <a href="edit_profile.php?userid=<?php echo $row['userid'];?>"><i class="fas fa-user-edit"></i><span>profile</span></a> -->
+            <a href="edit_profile.php"><i class="fas fa-user-edit"></i><span>profile</span></a>
+            
+            <!-- <a href="#"><i class="fas fa-layer-group"></i><span>about us</span></a>
+            <a href="#"><i class="fas fa-address-book"></i><span>contact us</span></a> -->
+            <a href="user_logout.php"><i class="fas fa-sign-out-alt"></i><span>logout</span></a>
         </div>
 
         <div class="content">
@@ -62,10 +74,6 @@ if($result -> num_rows == 1 ){
                 else{
                     echo "Check your username!!";
                 }
-                /*include 'user_dashboard.php';*/
             ?>
-            <!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-                Quae tenetur porro enim recusandae repellat voluptas 
-                voluptatem. Ipsam amet ea pariatur perferendis, 
-                ipsa deleniti nobis, omnis vitae id hic possimus blanditiis.</p> -->
+         
       

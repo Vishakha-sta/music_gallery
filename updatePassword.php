@@ -1,52 +1,39 @@
+<style>
+    body {
+        font-family: fangsong;
+        background-color: #212156;
+        color: #c7c5e6;
+        /* text-align: center; */
+    }
+    
+    
+     a {
+        color: yellow;
+    }
+    
+</style>
 <?php
-include("includes/db.php");
-
-if(!isset($_POST['username'])) {
-	echo "ERROR: Could not set username";
-	exit();
+include 'includes/db.php';
+session_start();
+$id = $_SESSION["userid"];/* userid of the user */
+// $id = 1;
+/* userid of the user */
+if(count($_POST)>0) {
+	$result = mysqli_query($con,"SELECT * from users WHERE userid='" . $id . "'");
+	$row=mysqli_fetch_array($result);
+	if($_POST['oldPassword'] == $row['password']){
+		if($_POST["newPassword1"] == $_POST["newPassword2"]  && $_POST['newPassword1'] != "") {
+			mysqli_query($con,"UPDATE users set password='" . $_POST["newPassword1"] . "' WHERE userid='" . $id . "'");
+			echo '<script>alert("Password Changed Sucessfully!!")</script>' ; 
+			$message = "Password Changed Sucessfully";
+		} 
+	}
+	else{
+		echo '<script>alert("Password is not correct!!")</script>' ; 
+		$message = "Password is not correct";
+	}
+	// header("location: edit_profile.php?message = $message"); 
 }
-
-if(!isset($_POST['oldPassword']) || !isset($_POST['newPassword1'])  || !isset($_POST['newPassword2'])) {
-	echo "Not all passwords have been set";
-	exit();
-}
-
-if($_POST['oldPassword'] == "" || $_POST['newPassword1'] == ""  || $_POST['newPassword2'] == "") {
-	echo "Please fill in all fields";
-	exit();
-}
-
-$username = $_POST['username'];
-$oldPassword = $_POST['oldPassword'];
-$newPassword1 = $_POST['newPassword1'];
-$newPassword2 = $_POST['newPassword2'];
-
-$oldMd5 = md5($oldPassword);
-
-$passwordCheck = mysqli_query($con, "SELECT * FROM users WHERE username='$username' AND password='$oldMd5'");
-if(mysqli_num_rows($passwordCheck) != 1) {
-	echo "Password is incorrect";
-	exit();
-}
-
-if($newPassword1 != $newPassword2) {
-	echo "Your new passwords do not match";
-	exit();
-}
-
-if(preg_match('/[^A-Za-z0-9]/', $newPassword1)) {
-	echo "Your password must only contain letters and/or numbers";
-	exit();
-}
-
-if(strlen($newPassword1) > 30 || strlen($newPassword1) < 5) {
-	echo "Your username must be between 5 and 30 characters";
-	exit();
-}
-
-$newMd5 = md5($newPassword1);
-
-$query = mysqli_query($con, "UPDATE users SET password='$newMd5' WHERE username='$username'");
-echo "Update successful";
-
 ?>
+<div>
+<a href="edit_profile.php">Go Back</a></div>

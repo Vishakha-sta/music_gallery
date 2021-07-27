@@ -1,3 +1,22 @@
+<!-- <?php
+include 'includes/db.php';
+
+$query = 'SELECT * FROM songs';
+
+$result = mysqli_query( $con, $query );
+$stack = array();
+
+if($result -> num_rows  > 0 ){
+    while($row = $result->fetch_assoc()){
+        array_push( $stack, $row );
+
+    }
+}
+
+$track_list = json_encode($stack);
+// print_r($track_list);
+?> -->
+
 <title>
     Simple Music Player</title>
 <!-- Load FontAwesome icons -->
@@ -38,7 +57,46 @@
             </div>
         </div>
     </div>
+    
 
+    <!-- <script>
+        // let track_list = <?php echo $track_list?>;
+        // console.log(track_list); 
+
+
+    
+        let track_list = [ 
+            <?php
+                include 'includes/db.php';
+
+                $query = 'SELECT * FROM songs';
+
+                $result = mysqli_query( $con, $query );
+                // $stack = array();
+
+                if($result -> num_rows  > 0 ){
+                    while($row = $result->fetch_assoc()){
+                        // array_push( $stack, $row );
+
+                
+                // $track_list = json_encode($stack);
+                // print_r($track_list);
+                ?>
+            {
+                name: <?php echo $row['songname']?>,
+                artist: <?php echo $row['artistname']?>,
+                image: <?php echo $row['songimg']?>,
+                path: <?php echo $row['songpath']?>
+            },
+
+            <?php 
+                }
+                }
+
+                ?>
+        ];
+
+    </script> -->
     <!-- Load the main script for the player -->
     <script src="js/music_player.js"></script>
 </div>

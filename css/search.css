@@ -62,3 +62,23 @@ body {
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
 }
+
+.p-3 {
+    padding: 3px;
+    margin-bottom: 2px;
+    background-image: linear-gradient( cornflowerblue, rgb(107, 107, 202));
+    color: darkblue;
+}
+
+.display-4 {
+    color: darkmagenta;
+}
+
+.container {
+    display: block;
+    font-size: 30px;
+    color: darkslateblue;
+    text-align: left;
+}
+
+.lead {}

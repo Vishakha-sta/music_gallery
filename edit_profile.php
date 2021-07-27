@@ -25,8 +25,10 @@
 
 <?php include 'user_header.php'; ?>
 <?php
-
-$id = $_GET['userid'];
+$id= $_SESSION["userid"];
+// $id= 1;
+// if(isset($_GET['userid'])){
+// $id = $_GET['userid'];
 
 $sql1 = "SELECT * FROM users WHERE userid = '".$id."' ";
 $result = mysqli_query($con , $sql1);
@@ -38,64 +40,12 @@ else {
     echo "this is not working";
 }
 
-// if(isset($_POST['save'])){
-//     $oldPassword = $_POST['oldPassword'];
-//     $newPassword1 = $_POST['newPassword1'];
-//     $c_Password = $_POST['c_Password'];
-
-//     $realpass = $row['password'];
-//     if($oldPassword == $realpass){
-    //         if($newPassword1 == $c_Password){
-        //             if($newPassword1 != $realpass){
-//                 $succ1 = mysqli_query($con,"UPDATE users set password='" . $_POST['newPassword1'] . "' WHERE userid='" . $id . "'");
-//             }
-//             else{
-    //                 echo "New password is same old password!! <br>please enter a valid password.....!";
-    //             }
-    //         }
-    //         else{
-        //             echo "Incorrect Confirm password";
-        //         }
-        //     }
-        //     else{
-            //         echo "Incorrect Password!";
-            //     }
-            //     if($succ1){
-                //         echo '<script>alert("Password has been Updated succesfully!!!")</script>' ; 
                 
-                //     }
-                
-                //     }
-                
-                $realpass = $row['password'];
                 if(count($_POST)>0) {
                     
                     $file = $_FILES['photo'];
                     
-                    $oldPassword = $_POST['oldPassword'];
-                    $newPassword1 = $_POST['newPassword1'];
-                    $c_Password = $_POST['newPassword2'];
-                    if(($oldPassword != "") || ($Password !="") || ($c_Password != "")){
-                        if($oldPassword == $realpass){
-                                    if($newPassword1 == $c_Password){
-                                            if($newPassword1 != $realpass){
-                                                    $succ1 = mysqli_query($con,"UPDATE users set password='" . $_POST['newPassword1'] . "' WHERE userid='" . $id . "'");
-                                                }
-                                                else{
-                                                        echo "New password is same old password!! <br>please enter a valid password.....!";
-                                                    }
-                                            }
-                                            else{
-                                                echo "Incorrect Confirm password";
-                                            }
-                        }
-                        else{
-                            echo "Incorrect Password!";
-                        }
-                    }
-                    else{
-                        echo '<script>alert("To update fields Fill all the fields")</script>';
-                    }
+                   
 
 
     if($file['size']!=0){
@@ -111,10 +61,10 @@ else {
                 // echo $destfile;
             }
             else{
-                echo "file has not been updated";
+                echo '<script>alert("file has not been updated!")</script>';
             }
         }
-
+        
         $succ = mysqli_query($con,"UPDATE users set username='" . $_POST['username'] . "', fname='" . $_POST['fname'] . "', lname='" . $_POST['lname'] . "', email='" . $_POST['email'] . "' , photo='" . $destfile . "' WHERE userid='" . $id . "'");
     }
     else{
@@ -124,13 +74,11 @@ else {
 
     if($succ){
         echo '<script>alert("Data has been Updated succesfully!!!")</script>' ; 
-        // echo "<script>alert(<h1 style='text-align:center; color:white;'>Data has been Updated succesfully!!!</h1></script>";
-        // echo "<script>alert(<h1 style='text-align:center; color:white;'>Data has been Updated succesfully!!!</h1></script>";
-        // echo '<span class="edit_page"><a href="edit_profile.php">Go Back</a></span>';
+       
     }
-    // $message = "Record Modified Successfully";
+  
     }
-    
+// }
 ?>
 
 <link rel="stylesheet" href="css/edit_profile.css">
@@ -164,18 +112,18 @@ else {
                 </div>
 
 
-                <!-- <div class="form-field">
+                <div class="form-field">
                     <input class="btn" type="submit" name="update" value="update">
-                </div> -->
-            <!-- </form>
+                </div>
+            </form>
         </center>
-    </div> -->
+    </div>
     <hr style="background-color:rgb(33, 2, 61)">
     
-    <!-- <div class="form">
-        <center> -->
+    <div class="form">
+        <center>
             <h2 class="pass_update">UPDATE PASSWORD</h2>
-            <!-- <form action="#" method="post" > -->
+            <form action="updatePassword.php" method="post" >
                 <div class="form-field">
                     <input type="password" class="oldPassword" name="oldPassword" placeholder="Current password">
 
@@ -186,36 +134,15 @@ else {
                 <div class="form-field">
                     <input type="password" class="newPassword2" name="newPassword2" placeholder="Confirm password">
                 </div>
-                <div class="form-field">
-                    <input class="btn" type="submit" name="update" value="update">
-                </div>
-                <!-- <span class="message"></span>
+                <span class="message"><?php if(isset($_GET['message']) ) { 
+                    echo '<script>alert("Password Changed Sucessfully!!")</script>' ; 
+                    $message = $_GET['message'];
+                    echo $message; } ?></span>
                 <div class="form-field">
                     <input type="submit" name="name" value="Save" class=" btn " onclick="updatePassword( 'oldPassword', 'newPassword1', 'newPassword2') "></input>
-                </div> -->
+                </div>
             </form>
         </center>
     </div>
 </body>
-
-
-
 <?php include 'footer.php'; ?>
-<script>
-    function updatePassword(oldPasswordClass, newPasswordClass1, newPasswordClass2) {
-        var oldPassword = $("." + oldPasswordClass).val();
-        var newPassword1 = $("." + newPasswordClass1).val();
-        var newPassword2 = $("." + newPasswordClass2).val();
-
-        $.post("updatePassword.php", {
-                oldPassword: oldPassword,
-                newPassword1: newPassword1,
-                newPassword2: newPassword2,
-                // username: userLoggedIn
-                username: <?php echo $row['username'];?>
-            })
-            .done(function(response) {
-                $("." + oldPasswordClass).nextAll(".message").text(response);
-            });
-    }
-</script>

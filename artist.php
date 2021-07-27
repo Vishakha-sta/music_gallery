@@ -14,50 +14,29 @@
     <div class="heading">
         <h2><i class="fas fa-compact-disc"></i> Artists</h2>
     </div>
-    <!-- <a href="album_songs.php?albumid = <?php echo $row['artistId'] ?>">     -->
+    
     <div class="box_it">
-        <a href="artist_songs.php?artistId=1">    
-            <div class='music-card'>
-                <div class='image'>
-                    <img src='image/profile-2.jpg'>
-                </div>
-                <div class='wave'></div>
-                <div class='wave'></div>
-                <div class='wave'></div>
-                <div class='info'>
-                    <h2 class='title'>Blue Neighborhood</h2>
-                    <author class='artist'>Troye Sivan</author>
-                </div>
-            </div>
-        </a> 
-        <a href="artist_songs.php?artistId=1">    
-            <div class='music-card'>
-                <div class='image'>
-                    <img src='image/profile-2.jpg'>
-                </div>
-                <div class='wave'></div>
-                <div class='wave'></div>
-                <div class='wave'></div>
-                <div class='info'>
-                    <h2 class='title'>Blue Neighborhood</h2>
-                    <author class='artist'>Troye Sivan</author>
-                </div>
-            </div>
-        </a> 
-        <a href="artist_songs.php?artistId=1">    
-            <div class='music-card'>
-                <div class='image'>
-                    <img src='image/profile-2.jpg'>
-                </div>
-                <div class='wave'></div>
-                <div class='wave'></div>
-                <div class='wave'></div>
-                <div class='info'>
-                    <h2 class='title'>Blue Neighborhood</h2>
-                    <author class='artist'>Troye Sivan</author>
-                </div>
-            </div>
-        </a> 
+    <?php 
+                    $sql = "SELECT * FROM artists ";
+                    $result = mysqli_query($con , $sql);
+                    if($result -> num_rows  > 0 ){
+                    while($row = $result->fetch_assoc()){
+                     ?>
+                        <a href="artist_songs.php?artistid=<?php echo $row['artistid']; ?>">    
+                            <div class='music-card'>
+                                <div class='image'>
+                                    <img src='<?php echo $row['artist_img']; ?>'>
+                                </div>
+                                <div class='wave'></div>
+                                <div class='wave'></div>
+                                <div class='wave'></div>
+                                <div class='info'>
+                                    <h2 class='title'><?php echo $row['artistname']; ?></h2>
+                                    
+                                </div>
+                            </div>
+                        </a> 
+                    <?php } } ?>
          
     </div>
 </body>

@@ -71,3 +71,7 @@ input:focus {
     color: white;
     box-shadow: 5px 5px 4px rgb(2, 66, 66);
 }
+
+span .message {
+    color: rgb(40, 9, 70);
+}

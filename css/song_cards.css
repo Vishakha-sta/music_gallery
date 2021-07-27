@@ -80,7 +80,7 @@ body {
 
 .music-card .info {
     position: absolute;
-    bottom: 20px;
+    bottom: 10px;
     left: 0;
     right: 0;
     text-align: center;
@@ -103,10 +103,13 @@ body {
 }
 
 .box_it {
-    display: flex;
+    /* display: flex;
     flex-direction: row;
     align-items: left;
-    justify-content: space-around;
+    justify-content: space-around; */
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 
@@ -167,7 +170,7 @@ body {
     }
     .music-card .info {
         position: absolute;
-        bottom: 20px;
+        bottom: 10px;
         left: 0;
         right: 0;
         text-align: center;
@@ -187,10 +190,13 @@ body {
         text-transform: uppercase;
     }
     .box_it {
-        display: flex;
+        /* display: flex;
         flex-direction: row;
         align-items: left;
-        justify-content: space-around;
+        justify-content: space-around; */
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
     }
 }
 
@@ -252,16 +258,16 @@ body {
     }
     .music-card .info {
         position: absolute;
-        bottom: 20px;
+        bottom: 10px;
         left: 0;
         right: 0;
         text-align: center;
     }
     .music-card .info .title {
-        font-size: 1.3em;
+        font-size: 1.05em;
         font-weight: 500;
         font-family: "Playfair display";
-        color: rgb(202, 10, 138);
+        color: rgb(247, 220, 238);
         margin-bottom: 8px;
     }
     .music-card .info .artist {
@@ -304,10 +310,13 @@ body {
     height: 25px;
 } */
     .box_it {
-        display: flex;
+        /* display: flex;
         flex-direction: column;
         align-items: left;
-        justify-content: space-around;
+        justify-content: space-around; */
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
     }
 }
 

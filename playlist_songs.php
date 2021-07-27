@@ -23,9 +23,9 @@
             if($result -> num_rows  > 0 ){
                 while($rows = $result->fetch_assoc()){
                     $sql1 = "SELECT * FROM `songs` WHERE songid = ".$rows['songid'];
-                    $result = mysqli_query($con , $sql1);
-                    if($result -> num_rows  > 0 ){
-                        while($row = $result->fetch_assoc()){
+                    $result1 = mysqli_query($con , $sql1);
+                    if($result1 -> num_rows  > 0 ){
+                        while($row = $result1->fetch_assoc()){
                     ?>
                     <div class="music_card">
                         <div class="imgBx">
@@ -44,7 +44,6 @@
     </div>
 
     <div class="box_it">
-    
                         <a href="add_songs_to_playlist.php?playlistid=<?php echo $id; ?>">    
                             <div class='music-card'>
                                 <div class='image'>

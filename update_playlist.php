@@ -45,15 +45,10 @@ else {
     // echo $row['playlist_img'];
     
                 
-    if(count($_POST)>0) {
-                    
+if(count($_POST)>0) {
     $file = $_FILES['photo'];
-                    
-                   
-
-
     if($file['size']!=0){
-        // print_r($file);
+        print_r($file);
         $filename = $file['name'];
         $filepath = $file['tmp_name'];
         $fileerror = $file['error'];
@@ -61,6 +56,7 @@ else {
         if($fileerror == 0){
             $destfile = 'image/playlist_img/'.$filename;
             if(move_uploaded_file($filepath,$destfile)){
+                echo '<script>alert("Profile Photo has been updated!")</script>';
                 // echo "Profile Photo has been updated";
                 // echo $destfile;
             }
@@ -69,9 +65,9 @@ else {
             }
         }
         
-
         $succ = mysqli_query($con,"UPDATE playlist set playlistname='" . $_POST['playlistname'] . "', photo='" . $destfile . "' WHERE playlistid='" . $id . "'");
     }
+
     else{
         $succ = mysqli_query($con,"UPDATE playlist set playlistname ='" . $_POST['playlistname'] . "'  WHERE playlistid='" . $id . "'");
 
@@ -79,10 +75,9 @@ else {
 
     if($succ){
         echo '<script>alert("Playlist has been Updated succesfully!!!")</script>' ; 
-       
     }
   
-    }
+}
 
     
 ?>
@@ -100,7 +95,7 @@ else {
                 </div>
                 <div class="form-field">
                     <label for="playlist_img">Playlist Photo :</label>
-                    <input type="file" name="photo" value="<?php echo $row['playlist_img']; ?>" placeholder="Choose playlist image">
+                    <input type="file" name="photo" placeholder="Choose playlist image">
                 </div>
                 <div class="form-field">
                     <input class="btn" type="submit" name="update" value="Update">

@@ -2,7 +2,7 @@
 
 <h1>Music Gallery - Rythm</h1>
 <hr>
-<h3>Features Of This Side</h3>
+<h3>Features Of This Website</h3>
 <ul>
   <li>Here users can serfe and listen to their favourite songs.</li>
   <li>Users can signup.</li>

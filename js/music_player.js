@@ -28,12 +28,6 @@ let track_list = [{
         path: "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/WFMU/Broke_For_Free/Directionless_EP/Broke_For_Free_-_01_-_Night_Owl.mp3"
     },
     {
-        name: "Senorita",
-        artist: "Shawn Mendes",
-        image: "../image/song_img/senorita.jpg",
-        path: "../music/Senorita.mp3"
-    },
-    {
         name: "Enthusiast",
         artist: "Tours",
         image: "https://images.pexels.com/photos/3100835/pexels-photo-3100835.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=250&w=250",

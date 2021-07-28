@@ -102,7 +102,7 @@
             <div class="col-sm-4">
                 <p class="text-center"><strong>Tarini Shrivastava</strong></p><br>
                 <div class="social">
-                    <a class="social-icon" href="https://www.linkedin.com/feed/"><i class="fab fa-linkedin"></i></a>
+                    <a class="social-icon" href="https://www.linkedin.com/in/tarini-shrivastava-1247261ab"><i class="fab fa-linkedin"></i></a>
                 </div>
                 <a href="#demo2" data-toggle="collapse">
                     <img src="img/developers/tarini.jpeg" style="border-radius:50%;" class="img-circle person" alt="Random Name" width="255" height="255">

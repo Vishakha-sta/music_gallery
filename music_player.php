@@ -82,12 +82,20 @@ $track_list = json_encode($stack);
                 // $track_list = json_encode($stack);
                 // print_r($track_list);
                 ?>
-            {
-                name: <?php echo $row['songname']?>,
-                artist: <?php echo $row['artistname']?>,
-                image: <?php echo $row['songimg']?>,
-                path: <?php echo $row['songpath']?>
-            },
+            <!-- {
+                name: <?php 
+                    // echo $row['songname']
+                    ?>,
+                artist: <?php 
+                // echo $row['artistname']
+                ?>,
+                image: <?php 
+                // echo $row['songimg']
+                ?>,
+                path: <?php 
+                // echo $row['songpath']
+                ?>
+            }, -->
 
             <?php 
                 }

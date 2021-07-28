@@ -15,15 +15,17 @@
 <?php
 include '../includes/db.php';
 session_start();
-$id = $_SESSION["adminid"];/* userid of the user */
+$id = $_SESSION["adminid"];
+$adminname = $_SESSION['adminname'];
+/* userid of the user */
 // $id = 1;
 /* userid of the user */
 if(count($_POST)>0) {
-	$result = mysqli_query($con,"SELECT * from `admin` WHERE adminid='" . $id . "'");
+	$result = mysqli_query($con,"SELECT * from `admin` WHERE adminname='" . $adminname . "'");
 	$row=mysqli_fetch_array($result);
 	if($_POST['oldPassword'] == $row['password']){
 		if($_POST["newPassword1"] == $_POST["newPassword2"]  && $_POST['newPassword1'] != "") {
-			mysqli_query($con,"UPDATE `admin` set `password`='" . $_POST["newPassword1"] . "' WHERE `adminid` ='" . $id . "'");
+			mysqli_query($con,"UPDATE `admin` set `password`='" . $_POST["newPassword1"] . "' WHERE `adminname` ='" . $adminname . "'");
 			echo '<script>alert("Password Changed Sucessfully!!")</script>' ; 
 			$message = "Password Changed Sucessfully";
 		} 

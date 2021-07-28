@@ -2,14 +2,16 @@
 
 <?php
 
-$id = $_SESSION['adminid'];
+$id = $_SESSION["adminid"];
+$adminname = $_SESSION['adminname'];
 // $id = 1;
 
-$sql1 = "SELECT * FROM `admin` WHERE adminid = '".$id."' ";
+$sql1 = "SELECT * FROM `admin` WHERE `adminname` = '".$adminname."' ";
 $result = mysqli_query($con , $sql1);
 if($result){
     // echo "this is working";
     $row= mysqli_fetch_array($result);
+    // echo "this row element is working";
 }
 else {
     echo "this is not working";
@@ -17,11 +19,15 @@ else {
 
 if(count($_POST)>0) {
                     
-        $succ = mysqli_query($con,"UPDATE `admin` set `adminname` ='" . $_POST['username'] . "', fname='" . $_POST['fname'] . "', lname='" . $_POST['lname'] . "', email='" . $_POST['email'] . "'  WHERE adminid='" . $id . "'");
+        $succ = mysqli_query($con,"UPDATE `admin` set `adminname` ='" . $_POST['username'] . "', fname='" . $_POST['fname'] . "', lname='" . $_POST['lname'] . "', email='" . $_POST['email'] . "'  WHERE adminname='" . $adminname . "'");
 
     if($succ){
         echo '<script>alert("Data has been Updated succesfully!!!")</script>' ; 
-       
+        
+    }
+    else{
+        echo '<script>alert("This is not Working I because this is devil")</script>' ; 
+        
     }
     }
 ?>

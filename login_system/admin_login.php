@@ -62,9 +62,9 @@
 				<input type="password" class="form-control" placeholder="Password" id="password" name="password">
 			</div>
 
-			<div class="align-left">
+			<!-- <div class="align-left">
 				<p>Don't have an account? <a href="admin_signup.php">signup</a>.</p>
-			</div>
+			</div> -->
 			<center>
 				<div class="container form-group col p-2">
 					<button type="submit" name="signup" class="btn btn-primary">Login Now</button>

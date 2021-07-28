@@ -63,7 +63,7 @@
                   <li><a href="login_system/user_login.php">User Login</a></li>
                     <li><a href="login_system/admin_login.php">Admin Login</a></li>
                     <li><a href="login_system/user_signup.php">User Signup</a></li>
-                    <li><a href="login_system/admin_signup.php">Admin Signup</a></li>
+                    <!-- <li><a href="login_system/admin_signup.php">Admin Signup</a></li> -->
                   </ul>
                 </li>
                 <!-- <li><a href="./podcast.html">Podcasts</a></li> -->

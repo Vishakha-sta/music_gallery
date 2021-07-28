@@ -1,10 +1,5 @@
 # music_gallery
-<style>
-h1{
-color:blue;
-text-align:center;
-}
-</style>
+
 <h1>Music Gallery - Rythm</h1>
 <hr>
 <h3>Features Of This Side</h3>

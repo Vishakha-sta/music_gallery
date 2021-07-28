@@ -30,8 +30,8 @@
                         
                         <td><img src="../<?php echo $row['songimg']; ?>" alt='Cover image'></td>
                         <?php echo "
-                        <td><a href='update_songs.php?songid=".$row['songid']."'>Update</a></td>
-                        <td><a href='delete_songs.php?songid=".$row['songid']."'>Delete</a></td>
+                        <td><a href='update_song.php?songid=".$row['songid']."'>Update</a></td>
+                        <td><a href='delete_song.php?songid=".$row['songid']."'>Delete</a></td>
                     </tr>";
             $count+=1;
         }

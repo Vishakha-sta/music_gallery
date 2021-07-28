@@ -19,10 +19,18 @@ if($result -> num_rows == 1 ){
 <html>
     <head>
         <meta charset="utf-8">
+
+        <meta charset="UTF-8">
+        <meta name="description" content="Poca - Podcast &amp; Audio Template">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Favicon -->
+        <link rel="icon" href="./img/core-img/favicon.ico">
+
+
+        <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
         <title>user header</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
         <link rel="stylesheet" href="css/user_header.css">
     </head>
@@ -32,6 +40,7 @@ if($result -> num_rows == 1 ){
             <div class="head">
                 <div class="logo_box">
                     <img class="logo" src="image/music-magpie-leaf-logo.png" alt="icon">
+                    <!-- <img class="logo" src="image/logo2.png" alt="icon"> -->
                     <label for="check">
                         <i class="fas fa-bars" id="sidebar_btn"></i>
                     </label>

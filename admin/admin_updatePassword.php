@@ -14,9 +14,9 @@
 </style>
 <?php
 include '../includes/db.php';
-// session_start();
-// $id = $_SESSION["userid"];/* userid of the user */
-$id = 1;
+session_start();
+$id = $_SESSION["adminid"];/* userid of the user */
+// $id = 1;
 /* userid of the user */
 if(count($_POST)>0) {
 	$result = mysqli_query($con,"SELECT * from `admin` WHERE adminid='" . $id . "'");

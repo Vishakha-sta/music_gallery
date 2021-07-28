@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="../css/admin_dashboard.css">
 <?php
     if($_SERVER['REQUEST_METHOD']=="POST"){
         include '../includes/db.php';
@@ -17,7 +18,7 @@
                     $_SESSION['lname'] = $row['lname'];
                     $_SESSION['email'] = $row['email'];
                     $_SESSION['adminid'] = $row['adminid'];
-                    header('location: ../admin//admin_dashboard.php');
+                    header('location: ../admin/admin_dashboard.php');
         }
         else{
             echo  '<script>
@@ -32,8 +33,13 @@
 
 <head>
 	<!-- Required meta tags -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8">
+  <meta name="description" content="Poca - Podcast &amp; Audio Template">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Favicon -->
+  <link rel="icon" href="../img/core-img/favicon.ico">
+
 	<!-- Bootstrap CSS -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" media="screen" href="../css/login.css" />

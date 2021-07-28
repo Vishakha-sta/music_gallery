@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="../css/admin_dashboard.css">
 <?php include 'admin_header.php'; ?>
 
     <div class="users-boxes">

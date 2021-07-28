@@ -1,13 +1,14 @@
+<link rel="stylesheet" href="../css/admin_dashboard.css">
 <?php include '../includes/db.php'; ?>
 <?php 
-// session_start();
-// if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
-// 	header("location: index.php");
+session_start();
+if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
+	header("location: index.php");
 //  	//echo"vishakha<br>";
-// 	exit;
-// }
-// $username= $_SESSION["adminname"];
-$username= "Vishakha";
+	exit;
+}
+$username= $_SESSION["adminname"];
+// $username= "Vishakha";
 $sql = "SELECT * FROM `admin` WHERE `adminname` = '$username'";
 // $sql = "SELECT * FROM `users` WHERE `username` = 'vishakha'";
 $result = mysqli_query($con , $sql);
@@ -18,15 +19,19 @@ if($result -> num_rows == 1 ){
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="../css/admin_dashboard.css">
     <!-- Boxicons CDN Link -->
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta charset="UTF-8">
+  <meta name="description" content="Poca - Podcast &amp; Audio Template">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Favicon -->
+  <link rel="icon" href="../img/core-img/favicon.ico">
+
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <title>Admin Dashboard</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/admin_dashboard.css">
    </head>
 <body>
   <div class="sidebar">

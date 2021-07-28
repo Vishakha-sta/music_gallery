@@ -2,8 +2,8 @@
 
 <?php
 
-// $id = $_SESSION['adminid'];
-$id = 1;
+$id = $_SESSION['adminid'];
+// $id = 1;
 
 $sql1 = "SELECT * FROM `admin` WHERE adminid = '".$id."' ";
 $result = mysqli_query($con , $sql1);
